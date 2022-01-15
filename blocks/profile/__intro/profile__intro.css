@@ -1,0 +1,7 @@
+.profile__intro {
+  width: 336px;
+  margin: 0 244px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  height: 73px;
+}
