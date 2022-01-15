@@ -3,8 +3,18 @@
   height: 24px;
   margin: 15px 0 0;
   background-color: black;
+  cursor: pointer;
+  padding: 0px;
 }
 
 .profile__edit-button:hover {
   opacity: 0.6;
+}
+
+@media screen and (max-width: 321px) {
+  .profile__edit-button {
+    width: 18px;
+    height: 18px;
+    margin: 10px 0 0 10px;
+  }
 }

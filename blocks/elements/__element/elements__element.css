@@ -1,0 +1,16 @@
+.elements__element {
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 282px;
+  overflow: hidden;
+  margin: 0;
+}
+
+@media screen and (max-width: 321px) {
+  .elements__element {
+    margin-bottom: 20px;
+  }
+}

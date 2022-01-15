@@ -4,3 +4,10 @@
   height: 120px;
   margin: 0 30px 0 0;
 }
+
+@media screen and (max-width: 321px) {
+  .profile__logo {
+    margin: 0 auto 26px;
+  }
+}
+

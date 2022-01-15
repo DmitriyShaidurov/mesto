@@ -12,6 +12,31 @@
 @import url("../blocks/profile/__logo/profile__logo.css");
 @import url("../blocks/profile/__edit-button-image/profile__edit-button-image.css");
 @import url("../blocks/profile/__add-button/profile__add-button.css");
+@import url("../blocks/elements/elements.css");
+@import url("../blocks/elements/__element/elements__element.css");
+@import url("../blocks/elements/__mask-group/elements__mask-group.css");
+@import url("../blocks/elements/__place/elements__place.css");
+@import url("../blocks/elements/__button/elements__button.css");
+@import url("../blocks/elements/__button-image/elements__button-image.css");
+@import url("../blocks/footer/footer.css");
+@import url("../blocks/footer/__author/footer__author.css");
+@import url("../blocks/profile/__content/profile__content.css");
+@import url("../blocks/profile/__add-button-image/profile__add-button-image.css");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

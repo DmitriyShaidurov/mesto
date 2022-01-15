@@ -1,7 +1,15 @@
 .profile__intro {
-  width: 336px;
-  margin: 0 244px 0 0;
+  width: 600px;
+  margin: 0;
   display: flex;
   flex-wrap: wrap;
-  height: 73px;
+  align-content: flex-start;
+}
+
+@media screen and (max-width: 321px) {
+  .profile__intro {
+    margin: 0 auto;
+    flex-direction: column;
+    width: 282px;
+  }
 }

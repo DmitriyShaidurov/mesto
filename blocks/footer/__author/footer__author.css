@@ -1,19 +1,16 @@
-.profile__text {
+.footer__author {
   font-family: Inter;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 22px;
-  color: #FFFFFF;
-  margin: 0;
+  color: #545454;
+  text-align: left;
 }
 
 @media screen and (max-width: 321px) {
-  .profile__text {
-    margin: 0 auto;
+  .footer__author {
     font-size: 14px;
     line-height: 17px;
-    text-align: center;
-    width: 282px;
   }
 }
