@@ -6,6 +6,7 @@
   cursor: pointer;
   background-color: white;
   border: 0;
+  transition: .2s linear;
 }
 
 .elements__button:hover {

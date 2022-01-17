@@ -5,6 +5,7 @@
   background-color: black;
   cursor: pointer;
   padding: 0px;
+  transition: .2s linear;
 }
 
 .profile__edit-button:hover {

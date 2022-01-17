@@ -9,3 +9,7 @@
     height: 25px;
   }
 }
+
+.header__logo:hover {
+  background: black;
+}

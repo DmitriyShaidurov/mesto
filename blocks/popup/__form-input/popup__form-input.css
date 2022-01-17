@@ -1,0 +1,17 @@
+.popup__form-input {
+  border: none;
+  border-bottom: 1px solid #000000;
+  margin: 0 0 30px;
+  padding: 0 0 13px;
+  width: 100%;
+  opacity: 0.8;
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.popup__form-input:last-child {
+  margin: 0;
+}
