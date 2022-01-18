@@ -7,8 +7,29 @@
   padding: 0px;
   transition: .2s linear;
   cursor: pointer;
+  font-family: 'inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  margin: 0;
+  color: #FFFFFF;
 }
 
 .popup__button:hover {
  opacity: .8;
 }
+
+@media screen and (max-width: 321px) {
+  .popup__button {
+    height: 46px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+
+
+
+
+

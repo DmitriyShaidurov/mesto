@@ -20,11 +20,11 @@
       <div class="profile__intro">
         <img src="./images/jak.jpg" alt="Жак-Ив Кусто" class="profile__logo">
         <div class="profile__content">
-        <h1 class="profile__title">Жак-Ив Кусто</h1>
-        <button class="profile__edit-button">
-          <img src="./images/profile-intro.svg" class="profile__edit-button-image">
-        </button>
-        <p class="profile__text">Исследователь океана</p>
+          <h1 class="profile__title">Жак-Ив Кусто</h1>
+          <button class="profile__edit-button">
+            <img src="./images/profile-intro.svg" class="profile__edit-button-image">
+          </button>
+          <p class="profile__text">Исследователь океана</p>
         </div>
       </div>
       <button class="profile__add-button">
@@ -71,19 +71,15 @@
   <footer class="footer">
     <p class="footer__author">© 2022 Mesto Russia</p>
   </footer>
-  <div class="popup popup_opened">
+  <div class="popup">
     <div class="popup__container">
 
       <form class="popup__form">
         <h2 class="popup__text">Редактировать профиль</h2>
-        <input type="text" class="popup__form-input">
-        <input type="text" class="popup__form-input">
-
-
+        <input type="text" class="popup__input-name" value="Жак-Ив Кусто">
+        <input type="text" class="popup__input-job" value="Исследователь океана">
+        <input type="submit" class="popup__button" value="Сохранить">
       </form>
-      <button class="popup__button">
-        <p class="popup__button-text">Сохранить</p>
-      </button>
       <button class="popup__close-button">
         <img class="popup__close-button-image" src="./images/Close Icon.svg" alt="Закрыть">
       </button>
@@ -92,5 +88,6 @@
 
   </div>
 
-<script src="./scripts/script.js"></script>
+  <script src="./scripts/script.js"></script>
+
 </html>
