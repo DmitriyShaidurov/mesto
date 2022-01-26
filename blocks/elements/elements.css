@@ -1,15 +1,30 @@
 .elements {
-  margin: 51px 200px 0 200px;
+  margin: 51px auto 0;
   display: grid;
+  max-width: 880px;
   gap: 20px 17px;
   grid-template-columns: repeat(3, 1fr);
 }
 
-@media screen and (max-width: 321px) {
+@media screen and (max-width: 1023px) {
   .elements {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .elements {
+    grid-template-columns: repeat(2, 1fr);
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    gap: 0;
+  }
+}
+
+@media screen and (max-width: 321px) {
+  .elements {
+
     gap: 0;
     margin: 0 19px 48px;
   }

@@ -1,12 +1,10 @@
 .profile__content {
   display: flex;
-  width: 336px;
-  flex-wrap: wrap;
-  align-content: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
-@media screen and (max-width: 321px) {
+/* @media screen and (max-width: 321px) {
   .profile__content {
-    width: 282px;
   }
-}
+} */
