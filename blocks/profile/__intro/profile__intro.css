@@ -14,7 +14,7 @@
   }
 }
 
-@media screen and (max-width: 321px) {
+@media screen and (max-width: 400px) {
   .profile__intro {
     margin: 0 auto;
     width: 282px;

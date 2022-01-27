@@ -3,20 +3,18 @@
   background-color: white;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   align-content: flex-start;
   width: 282px;
   overflow: hidden;
   margin: 0 auto;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .elements__element {
-    margin: 0 auto 20px;
+    margin: 0 auto;
   }
 }
 
-@media screen and (max-width: 321px) {
-  .elements__element {
-    margin-bottom: 20px;
-  }
-}
+
+

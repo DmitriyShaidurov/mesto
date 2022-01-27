@@ -1,5 +1,5 @@
 .elements__button {
-  width: 21px;
+  width: 22px;
   height: 19px;
   margin: 6px 20px 30px 19px;
   padding: 0;
@@ -7,8 +7,14 @@
   background-color: white;
   border: 0;
   transition: .2s linear;
+  background-image: url('/images/heart.svg');
+  background-repeat: no-repeat;
 }
 
 .elements__button:hover {
   opacity: 0.5;
+}
+
+.elements__button:active {
+  background-image: url('/images/heart_dark.svg');
 }

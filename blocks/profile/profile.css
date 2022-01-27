@@ -5,22 +5,31 @@
   justify-content: space-between;
   align-items: center; */
   max-width: 880px;
+  padding: 0 200px;
+}
+
+@media screen and (max-width: 1279px) {
+  .profile {
+    padding: 0 80px;
+  }
 }
 
 @media screen and (max-width: 879px) {
   .profile {
     flex-direction: column;
     max-width: 600px;
+    padding: 0 40px;
   }
 }
 
 
 
 
-@media screen and (max-width: 321px) {
+@media screen and (max-width: 400px) {
   .profile {
     margin: 0 auto 36px;
     flex-direction: column;
+    padding: 0 19px;
   }
 }
 

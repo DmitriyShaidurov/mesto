@@ -7,13 +7,9 @@
 
 @media screen and (max-width: 879px) {
   .profile__logo {
-    margin: auto;
-  }
-}
-
-@media screen and (max-width: 321px) {
-  .profile__logo {
     margin: 0 auto 26px;
   }
 }
+
+
 

@@ -23,17 +23,17 @@ let popupContainer = document.querySelector('.popup__container')
 
 
 function openPopup() {
+  nameInput.value = nameMain.textContent;
+  jobInput.value = jobMain.textContent;
   popup.classList.add('popup_opened');
 }
 
 
 function closePopup() {
   popup.classList.remove('popup_opened');
-
 }
 
-nameInput.value = nameMain.textContent;
-jobInput.value = jobMain.textContent;
+
 profileOpenPopupButton.addEventListener('click', openPopup);
 popupCloseButton.addEventListener('click', closePopup);
 
@@ -43,7 +43,7 @@ popupCloseButton.addEventListener('click', closePopup);
   }
 }) */
 
-let imageHearts = document.querySelectorAll('.elements__button-image');
+/* let imageHearts = document.querySelectorAll('.elements__button-image');
 
 for (let i = 0; i < imageHearts.length; i++) {
   imageHearts[i].addEventListener('click', imageHeartChanger)
@@ -57,7 +57,7 @@ function imageHeartChanger(event) {
     event.currentTarget.setAttribute('src', './images/heart_dark.svg')
   )
 }
-
+ */
 
 
 

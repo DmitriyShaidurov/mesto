@@ -3,11 +3,25 @@
   border-bottom: 1px solid rgb(84, 84, 84, 0.7);
   min-height: 74px;
   max-width: 880px;
+  padding: 0 200px;
 }
 
-@media screen and (max-width: 321px) {
+@media screen and (max-width: 1279px) {
+  .header {
+    padding: 0 80px;
+  }
+}
+
+@media screen and (max-width: 879px) {
+  .header {
+    padding: 0 40px 0 40px;
+  }
+}
+
+@media screen and (max-width: 399px) {
   .header {
     margin: 28px auto 42px;
     min-height: 56px;
+    padding: 0 19px;
   }
 }

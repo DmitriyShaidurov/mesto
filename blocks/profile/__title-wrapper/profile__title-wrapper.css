@@ -3,6 +3,15 @@
   flex-direction: row;
   align-items: center;
   margin: 0;
-  width: 100%;
-  justify-content: center;
+  width: 336px;
+  justify-content: space-between;
+}
+
+
+
+@media screen and (max-width: 400px) {
+  .profile__title-wrapper {
+    width: 282px;
+    justify-content: center;
+  }
 }
