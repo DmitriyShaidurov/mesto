@@ -22,8 +22,11 @@
   }
 }
 
-
-
+@media screen and (max-width: 500px) {
+  .profile {
+    padding: 0;
+  }
+}
 
 @media screen and (max-width: 400px) {
   .profile {
