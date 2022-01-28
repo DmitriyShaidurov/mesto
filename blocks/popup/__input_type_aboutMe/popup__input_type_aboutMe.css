@@ -3,7 +3,7 @@
 
 }
 
-@media screen and (max-width: 321px) {
+@media screen and (max-width: 600px) {
   .popup__input_type_aboutMe {
     margin-bottom: 45px;
   }

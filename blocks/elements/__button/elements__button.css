@@ -7,7 +7,7 @@
   background-color: white;
   border: 0;
   transition: .2s linear;
-  background-image: url('/images/heart.svg');
+  background-image: url('../../../images/heart.svg');
   background-repeat: no-repeat;
 }
 
@@ -16,5 +16,5 @@
 }
 
 .elements__button:active {
-  background-image: url('/images/heart_dark.svg');
+  background-image: url('../../../images/heart_dark.svg');
 }
