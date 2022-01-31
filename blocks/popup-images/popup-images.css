@@ -1,4 +1,4 @@
-.popup {
+.popup-images {
   width: 100%;
   height: 100%;
   display: flex;
@@ -8,8 +8,8 @@
   justify-content: center;
   align-items: center;
   position: fixed;
+  z-index: 2;
   visibility: hidden;
   opacity: 0;
   transition: visibility .3s, opacity .5s;
-  z-index: 2;
 }

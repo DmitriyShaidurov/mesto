@@ -5,5 +5,6 @@
   max-width: 1280px;
   margin: 0 auto;
   text-rendering: optimizeLegibility;
+  z-index: 1;
 }
 
