@@ -49,19 +49,26 @@ const elementButton = template.querySelector('.elements__button')
 const popupAddImagesButton = document.getElementById('popupAddImagesButton');
 
 function render() {
-  initialCards.forEach(renderItem);
+  initialCards.forEach(function (element) {
+    const newCard = createCard(element);
+    renderCard(elements, newCard);
+  })
 }
 
-function renderItem(card) {
-  const newItem = template.cloneNode(true);
-  const image = newItem.querySelector('.elements__mask-group');
-  const elementPlace = newItem.querySelector('.elements__place');
+function createCard(card) {
+  const newElement = template.cloneNode(true);
+  const image = newElement.querySelector('.elements__mask-group');
+  const elementPlace = newElement.querySelector('.elements__place');
   image.src = card.link;
   image.alt = card.name;
   elementPlace.textContent = card.name;
   image.addEventListener('click', () => openPopupImages(card));
-  addListeners(newItem);
-  elements.prepend(newItem);
+  addListeners(newElement);
+  return newElement;
+}
+
+function renderCard(container, newElement) {
+  container.prepend(newElement);
 }
 
 render();
@@ -125,6 +132,10 @@ function openPopupAddButton() {
   popupProfileImagesAddButton.classList.add('popup_opened');
 }
 
+function closePopup(popup) {
+
+}
+
 function closePopup() {
   popupProfile.classList.remove('popup_opened');
 }
@@ -146,8 +157,6 @@ function closePopupImages() {
   popupImagesText.textContent = '';
   popupImagesImage.alt = '';
 }
-
-
 
 profileOpenPopupButton.addEventListener('click', openPopup);
 popupProfileCloseButton.addEventListener('click', closePopup);
