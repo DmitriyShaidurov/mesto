@@ -8,7 +8,7 @@ function formSubmitHandler(evt) {
   evt.preventDefault();
   nameMain.textContent = nameInput.value;
   jobMain.textContent = jobInput.value;
-  closePopup();
+  closePopup(popupProfile);
 }
 
 formElement.addEventListener('submit', formSubmitHandler);
@@ -67,6 +67,13 @@ function createCard(card) {
   return newElement;
 }
 
+function openPopupImages(data) {
+  popupImagesImage.src = data.link;
+  popupImagesText.textContent = data.name;
+  popupImagesImage.alt = data.name;
+  popupImages.classList.add('popup_opened');
+}
+
 function renderCard(container, newElement) {
   container.prepend(newElement);
 }
@@ -89,13 +96,14 @@ function handleDelete(event) {
 
 function handleCreate(event) {
   event.preventDefault();
-  renderItem({
+  const newCard = createCard({
     name: nameImage.value,
     link: inputLink.value
   });
   nameImage.value = '';
   inputLink.value = '';
-  closePopupAddButton();
+  renderCard(elements, newCard)
+  closePopup(popupProfileImagesAddButton);
 }
 
 popupAddButtonSubmit.addEventListener('click', handleCreate);
@@ -116,53 +124,27 @@ const popupProfileImagesAddButton = document.getElementById('popupProfileImagesA
 const popupProfileImagesCloseButton = document.getElementById('popupProfileImagesCloseButton');
 const popupProfileImagesAddButtonContainer = document.getElementById('popupProfileImagesAddButtonContainer');
 const popupZoomImage = document.querySelector('.elements__mask-group');
-const popupImages = document.querySelector('.popup-images');
-const popupImagesCloseButton = document.querySelector('.popup-images__close-button-image');
-const popupImagesContainer = document.querySelector('.popup-images__container');
-const popupImagesImage = document.querySelector('.popup-images__image');
-const popupImagesText = document.querySelector('.popup-images__text');
+const popupImages = document.querySelector('#popupImages');
+const popupImagesCloseButton = document.querySelector('#popupCloseButtonImage');
+const popupImagesContainer = document.querySelector('#popupImagesContainer');
+const popupImagesImage = document.querySelector('#popupImagesImage');
+const popupImagesText = document.querySelector('#popupImagesText');
 
-function openPopup() {
+function openPopup(popupop) {
   nameInput.value = nameMain.textContent;
   jobInput.value = jobMain.textContent;
-  popupProfile.classList.add('popup_opened');
+  popupop.classList.add('popup_opened');
 }
 
-function openPopupAddButton() {
-  popupProfileImagesAddButton.classList.add('popup_opened');
+function closePopup(popupcl) {
+popupcl.classList.remove('popup_opened');
 }
 
-function closePopup(popup) {
-
-}
-
-function closePopup() {
-  popupProfile.classList.remove('popup_opened');
-}
-
-function closePopupAddButton() {
-  popupProfileImagesAddButton.classList.remove('popup_opened');
-}
-
-function openPopupImages(data) {
-  popupImagesImage.src = data.link;
-  popupImagesText.textContent = data.name;
-  popupImagesImage.alt = data.name;
-  popupImages.classList.add('popup-images_opened');
-}
-
-function closePopupImages() {
-  popupImages.classList.remove('popup-images_opened');
-  popupImagesImage.src = '';
-  popupImagesText.textContent = '';
-  popupImagesImage.alt = '';
-}
-
-profileOpenPopupButton.addEventListener('click', openPopup);
-popupProfileCloseButton.addEventListener('click', closePopup);
-profileImagesAddButton.addEventListener('click', openPopupAddButton);
-popupProfileImagesCloseButton.addEventListener('click', closePopupAddButton);
-popupImagesCloseButton.addEventListener('click', closePopupImages);
+profileOpenPopupButton.addEventListener('click', () => {openPopup(popupProfile)});
+popupProfileCloseButton.addEventListener('click', () => {closePopup(popupProfile)});
+profileImagesAddButton.addEventListener('click', () => {openPopup(popupProfileImagesAddButton)});
+popupProfileImagesCloseButton.addEventListener('click', () => {closePopup(popupProfileImagesAddButton)});
+popupImagesCloseButton.addEventListener('click', () => {closePopup(popupImages)});
 
 /* popup.addEventListener('click', function (event) {
   if (event.target === event.currentTarget) {
