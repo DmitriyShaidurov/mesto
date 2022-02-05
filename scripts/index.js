@@ -130,21 +130,21 @@ const popupImagesContainer = document.querySelector('#popupImagesContainer');
 const popupImagesImage = document.querySelector('#popupImagesImage');
 const popupImagesText = document.querySelector('#popupImagesText');
 
-function openPopup(popupop) {
+function openPopup(popup) {
   nameInput.value = nameMain.textContent;
   jobInput.value = jobMain.textContent;
-  popupop.classList.add('popup_opened');
+  popup.classList.add('popup_opened');
 }
 
-function closePopup(popupcl) {
-popupcl.classList.remove('popup_opened');
+function closePopup(popup) {
+popup.classList.remove('popup_opened');
 }
 
-profileOpenPopupButton.addEventListener('click', () => {openPopup(popupProfile)});
-popupProfileCloseButton.addEventListener('click', () => {closePopup(popupProfile)});
-profileImagesAddButton.addEventListener('click', () => {openPopup(popupProfileImagesAddButton)});
-popupProfileImagesCloseButton.addEventListener('click', () => {closePopup(popupProfileImagesAddButton)});
-popupImagesCloseButton.addEventListener('click', () => {closePopup(popupImages)});
+profileOpenPopupButton.addEventListener('click', () => openPopup(popupProfile));
+popupProfileCloseButton.addEventListener('click', () => closePopup(popupProfile));
+profileImagesAddButton.addEventListener('click', () => openPopup(popupProfileImagesAddButton));
+popupProfileImagesCloseButton.addEventListener('click', () => closePopup(popupProfileImagesAddButton));
+popupImagesCloseButton.addEventListener('click', () => closePopup(popupImages));
 
 /* popup.addEventListener('click', function (event) {
   if (event.target === event.currentTarget) {
