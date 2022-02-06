@@ -71,7 +71,7 @@ function openPopupImages(data) {
   popupImagesImage.src = data.link;
   popupImagesText.textContent = data.name;
   popupImagesImage.alt = data.name;
-  popupImages.classList.add('popup_opened');
+  openPopup(popupImages);
 }
 
 function renderCard(container, newElement) {
@@ -103,7 +103,7 @@ function handleCreate(event) {
   nameImage.value = '';
   inputLink.value = '';
   renderCard(elements, newCard)
-  closePopup(popupProfileImagesAddButton);
+  closePopup(popupProfileImages);
 }
 
 popupAddButtonSubmit.addEventListener('click', handleCreate);
@@ -120,9 +120,8 @@ const popupProfile = document.getElementById('popupProfile');
 const popupProfileCloseButton = document.getElementById('popupProfileCloseButton');
 const popupProfileContainer = document.getElementById('popupProfileContainer');
 const profileImagesAddButton = document.getElementById('profileImagesAddButton');
-const popupProfileImagesAddButton = document.getElementById('popupProfileImagesAddButton');
+const popupProfileImages = document.getElementById('popupProfileImages');
 const popupProfileImagesCloseButton = document.getElementById('popupProfileImagesCloseButton');
-const popupProfileImagesAddButtonContainer = document.getElementById('popupProfileImagesAddButtonContainer');
 const popupZoomImage = document.querySelector('.elements__mask-group');
 const popupImages = document.querySelector('#popupImages');
 const popupImagesCloseButton = document.querySelector('#popupCloseButtonImage');
@@ -131,8 +130,7 @@ const popupImagesImage = document.querySelector('#popupImagesImage');
 const popupImagesText = document.querySelector('#popupImagesText');
 
 function openPopup(popup) {
-  nameInput.value = nameMain.textContent;
-  jobInput.value = jobMain.textContent;
+
   popup.classList.add('popup_opened');
 }
 
@@ -140,10 +138,14 @@ function closePopup(popup) {
 popup.classList.remove('popup_opened');
 }
 
-profileOpenPopupButton.addEventListener('click', () => openPopup(popupProfile));
+profileOpenPopupButton.addEventListener('click', () => {
+  nameInput.value = nameMain.textContent;
+  jobInput.value = jobMain.textContent;
+  openPopup(popupProfile);
+});
 popupProfileCloseButton.addEventListener('click', () => closePopup(popupProfile));
-profileImagesAddButton.addEventListener('click', () => openPopup(popupProfileImagesAddButton));
-popupProfileImagesCloseButton.addEventListener('click', () => closePopup(popupProfileImagesAddButton));
+profileImagesAddButton.addEventListener('click', () => openPopup(popupProfileImages));
+popupProfileImagesCloseButton.addEventListener('click', () => closePopup(popupProfileImages));
 popupImagesCloseButton.addEventListener('click', () => closePopup(popupImages));
 
 /* popup.addEventListener('click', function (event) {
