@@ -1,6 +1,6 @@
 const formElement = document.getElementById('popupProfile');
-const nameInput = document.querySelector('.popup__input_type_name');
-const jobInput = document.querySelector('.popup__input_type_aboutMe');
+const nameInput = document.querySelector('#popupName');
+const jobInput = document.querySelector('#aboutMe');
 const nameMain = document.querySelector('.profile__title')
 const jobMain = document.querySelector('.profile__text')
 
@@ -41,8 +41,8 @@ const initialCards = [
 ];
 const template = document.querySelector('#elementTemplate').content;
 const elements = document.querySelector('.elements');
-const nameImage = document.querySelector('.popup__input_type_imageName');
-const inputLink = document.querySelector('.popup__input_type_link');
+const nameImage = document.querySelector('#imageNameId');
+const inputLink = document.querySelector('#imageLink');
 const popupAddButtonSubmit = document.querySelector('#popupAddButtonSubmit')
 const elementImage = template.querySelector('.elements__mask-group')
 const elementButton = template.querySelector('.elements__button')
@@ -110,11 +110,6 @@ popupAddButtonSubmit.addEventListener('click', handleCreate);
 
 
 
-
-
-
-/* Далее Popup */
-
 const profileOpenPopupButton = document.getElementById('profileEditButton');
 const popupProfile = document.getElementById('popupProfile');
 const popupProfileCloseButton = document.getElementById('popupProfileCloseButton');
@@ -166,4 +161,124 @@ popupImagesCloseButton.addEventListener('click', () => closePopup(popupImages));
 popupProfile.addEventListener('click', closePopupOverlay);
 popupImages.addEventListener('click', closePopupOverlay);
 popupProfileImages.addEventListener('click', closePopupOverlay);
+
+
+
+
+
+
+
+
+/* const ERRORS = {
+  passwordsMismatch: 'Пароли не совпадают'
+};
+
+const formSubmit = (event, form) => {
+    event.preventDefault();
+    if (form.checkValidity()) {
+        form.reset();
+    }
+}
+
+const checkPasswords = (form, passwordRepeatInput) => {
+    const passwordInput = form.querySelector('#password');
+
+    if (passwordInput.value === passwordRepeatInput.value) {
+        passwordRepeatInput.setCustomValidity('');
+    } else {
+        passwordRepeatInput.setCustomValidity(ERRORS.passwordsMismatch);
+    }
+}
+
+const setInputValid = (inputErrorClass, errorMessage, input) => {
+    errorMessage.textContent = '';
+    input.classList.remove(inputErrorClass);
+}
+
+const setInputInvalid = (inputErrorClass, errorMessage, input) => {
+    errorMessage.textContent = input.validationMessage;
+    input.classList.add(inputErrorClass);
+}
+
+const checkInputValidity = ({ inputErrorClass }, form, input) => {
+    const errorMessage = form.querySelector(`#error-${input.id}`);
+
+    if (input.name === 'passwordRepeat') {
+        checkPasswords(form, input);
+    }
+
+    if (input.validity.valid) {
+        setInputValid(inputErrorClass, errorMessage, input);
+    } else {
+        setInputInvalid(inputErrorClass, errorMessage, input);
+    }
+}
+
+const disableButton = (disabledButtonClass, button) => {
+    button.setAttribute('disabled', '');
+    button.classList.add(disabledButtonClass);
+}
+const checkButtonValidity = ({ disabledButtonClass }, form, button) => {
+    if (form.checkValidity()) {
+        button.removeAttribute('disabled');
+        button.classList.remove(disabledButtonClass);
+    } else {
+        disableButton(disabledButtonClass, button);
+    }
+}
+
+function enableValidation({ formSelector, inputSelector, buttonSelector, ...rest }) {
+    const form = document.querySelector(formSelector);
+
+      Сейчас обработчик добавляется только на первую форму
+    Если в проекте их несколько, нужно добавить на все
+    form.addEventListener('submit', (event) => formSubmit(event, form));
+    const inputs = form.querySelectorAll(inputSelector);
+    const button = form.querySelector(buttonSelector);
+
+    form.addEventListener('reset', () => {
+        disableButton(rest, button);
+    });
+
+    checkButtonValidity(rest, form, button);
+
+    inputs.forEach(input => {
+        input.addEventListener('input', (event) => {
+            checkInputValidity(rest, form, input);
+            checkButtonValidity(rest, form, button);
+        });
+    });
+}
+
+enableValidation({
+    formSelector: '.form',
+    inputSelector: '.input__text',
+    buttonSelector: '.input__btn_add',
+    disabledButtonClass: 'input__btn_disabled',
+    inputErrorClass: 'input__text_type_error',
+});
+
+
+
+
+
+const enableValidation = (options) => {
+
+  const formList = Array.from(document.querySelectorAll(options.formSelector))
+
+  formList.forEach((formElement) => {
+
+      formElement.addEventListener('submit', function (evt) {
+
+          evt.preventDefault()
+
+      })
+
+      setEventListeners(formElement, options);
+
+  })
+
+} */
+
+
 

@@ -1,0 +1,10 @@
+.popup__span_type_bottom {
+  margin: 5px 0 31px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .popup__span_type_bottom {
+    margin-bottom: 28px;
+  }
+}

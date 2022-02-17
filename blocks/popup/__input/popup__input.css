@@ -9,4 +9,9 @@
   font-size: 14px;
   line-height: 17px;
   outline: none;
+  margin: 0;
+}
+
+.popup__input:focus {
+  border-bottom-color: #007DFF;
 }
