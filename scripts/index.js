@@ -102,8 +102,9 @@ function handleCreate(event) {
   });
   nameImage.value = '';
   inputLink.value = '';
-  renderCard(elements, newCard)
+  renderCard(elements, newCard);
   closePopup(popupProfileImages);
+  disableButton('popup__button_disabled', popupAddButtonSubmit);
 }
 
 popupAddButtonSubmit.addEventListener('click', handleCreate);
@@ -137,8 +138,8 @@ function closePopupEscape(evt) {
 }
 
 function closePopup(popup) {
-popup.classList.remove('popup_opened');
-document.removeEventListener('keydown', closePopupEscape);
+  popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupEscape);
 }
 
 function closePopupOverlay(evt) {
@@ -161,6 +162,3 @@ popupImagesCloseButton.addEventListener('click', () => closePopup(popupImages));
 popupProfile.addEventListener('click', closePopupOverlay);
 popupImages.addEventListener('click', closePopupOverlay);
 popupProfileImages.addEventListener('click', closePopupOverlay);
-
-
-

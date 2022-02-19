@@ -32,10 +32,16 @@ function setEventListeners(config, formElement) {
   });
 }
 
+function disableButton(config, buttonElement) {
+  buttonElement.setAttribute('disabled', '');
+  buttonElement.classList.add(config);
+}
+
+
+
 function enableValidation(config) {
   const formList = Array.from(document.querySelectorAll(config.formSelector));
   formList.forEach((formElement) => {
-
     formElement.addEventListener('submit', (evt) => {
       evt.preventDefault();
     });
@@ -60,8 +66,7 @@ function hasInvalidInput(input) {
 
 function toggleButtonState(config, input, buttonElement) {
   if (hasInvalidInput(input)) {
-    buttonElement.classList.add(config.disableButtonClass);
-    buttonElement.setAttribute('disabled', '');
+    disableButton(config.disableButtonClass, buttonElement);
   } else {
     buttonElement.classList.remove(config.disableButtonClass);
     buttonElement.removeAttribute('disabled');
