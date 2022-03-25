@@ -1,3 +1,6 @@
+import { popupImagesImage, popupImagesText, openPopup, popupImages, closePopupEscape } from './utils.js'
+import { Card } from './Card.js'
+
 const formElement = document.getElementById('popupProfile');
 const nameInput = document.querySelector('#popupName');
 const jobInput = document.querySelector('#aboutMe');
@@ -39,23 +42,23 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
-const template = document.querySelector('#elementTemplate').content;
+/* const template = document.querySelector('#elementTemplate').content; */
 const elements = document.querySelector('.elements');
 const nameImage = document.querySelector('#imageNameId');
 const inputLink = document.querySelector('#imageLink');
 const popupAddButtonSubmit = document.querySelector('#popupAddButtonSubmit')
-const elementImage = template.querySelector('.elements__mask-group')
+/* const elementImage = template.querySelector('.elements__mask-group')
 const elementButton = template.querySelector('.elements__button')
-const popupAddImagesButton = document.getElementById('popupAddImagesButton');
+const popupAddImagesButton = document.getElementById('popupAddImagesButton'); */
 
 function render() {
-  initialCards.forEach(function (element) {
-    const newCard = createCard(element);
-    renderCard(elements, newCard);
+  initialCards.forEach(function (data) {
+    renderCard(data, elements);
   })
 }
 
-function createCard(card) {
+
+/* 1 function createCard(card) {
   const newElement = template.cloneNode(true);
   const image = newElement.querySelector('.elements__mask-group');
   const elementPlace = newElement.querySelector('.elements__place');
@@ -65,50 +68,58 @@ function createCard(card) {
   image.addEventListener('click', () => openPopupImages(card));
   addListeners(newElement);
   return newElement;
-}
+} */
 
-function openPopupImages(data) {
+/* 6 function openPopupImages(data) {
   popupImagesImage.src = data.link;
   popupImagesText.textContent = data.name;
   popupImagesImage.alt = data.name;
   openPopup(popupImages);
+} */
+
+export const openPopupImages = (name, link) => {
+  popupImagesImage.src = link;
+  popupImagesText.textContent = name;
+  popupImagesImage.alt = name;
+
+  openPopup(popupImages);
 }
 
-function renderCard(container, newElement) {
-  container.prepend(newElement);
+const renderCard = (data, container) => {
+  const card = new Card(data, '#elementTemplate', openPopupImages)
+  const cardElement = card.createCard()
+  container.prepend(cardElement);
 }
 
 render();
 
-function imageHeartChanger(event) {
+/* 8 function imageHeartChanger(event) {
   event.currentTarget.classList.toggle('elements__button_like_active');
-}
+} */
 
-function addListeners(el) {
+/* 2 function addListeners(el) {
   el.querySelector('.elements__deleteButton').addEventListener("click", handleDelete);
   el.querySelector('.elements__button').addEventListener('click', imageHeartChanger);
-}
+} */
 
-function handleDelete(event) {
+/* function handleDelete(event) {
   event.target.closest('.elements__element').remove();
-}
-
+} */
 
 function handleCreate(event) {
   event.preventDefault();
-  const newCard = createCard({
+  /* const newCard =  */renderCard({
     name: nameImage.value,
     link: inputLink.value
-  });
+  }, elements
+  )
   nameImage.value = '';
   inputLink.value = '';
-  renderCard(elements, newCard);
   closePopup(popupProfileImages);
   disableButton('popup__button_disabled', popupAddButtonSubmit);
 }
 
 popupAddButtonSubmit.addEventListener('click', handleCreate);
-
 
 
 const profileOpenPopupButton = document.getElementById('profileEditButton');
@@ -119,13 +130,13 @@ const profileImagesAddButton = document.getElementById('profileImagesAddButton')
 const popupProfileImages = document.getElementById('popupProfileImages');
 const popupProfileImagesCloseButton = document.getElementById('popupProfileImagesCloseButton');
 const popupZoomImage = document.querySelector('.elements__mask-group');
-const popupImages = document.querySelector('#popupImages');
+/* const popupImages = document.querySelector('#popupImages'); */
 const popupImagesCloseButton = document.querySelector('#popupCloseButtonImage');
 const popupImagesContainer = document.querySelector('#popupImagesContainer');
-const popupImagesImage = document.querySelector('#popupImagesImage');
-const popupImagesText = document.querySelector('#popupImagesText');
+/* const popupImagesImage = document.querySelector('#popupImagesImage'); */
+/* const popupImagesText = document.querySelector('#popupImagesText'); */
 
-function openPopup(popup) {
+/* function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupEscape);
 }
@@ -135,9 +146,9 @@ function closePopupEscape(evt) {
     const openPopup = document.querySelector('.popup_opened')
     closePopup(openPopup);
   }
-}
+} */
 
-function closePopup(popup) {
+export function closePopup(popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', closePopupEscape);
 }
@@ -162,3 +173,10 @@ popupImagesCloseButton.addEventListener('click', () => closePopup(popupImages));
 popupProfile.addEventListener('click', closePopupOverlay);
 popupImages.addEventListener('click', closePopupOverlay);
 popupProfileImages.addEventListener('click', closePopupOverlay);
+
+
+
+
+
+
+
