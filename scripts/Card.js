@@ -7,7 +7,6 @@ export class Card {
   }
 
   _imageHeartChanger = () => {
-    console.log('12321')
     this._likeButton.classList.toggle('elements__button_like_active');
   }
 
