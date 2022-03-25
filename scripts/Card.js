@@ -1,13 +1,3 @@
-/* import { popupImagesImage, popupImagesText, openPopup, popupImages} from './utils.js'
-import { openPopupImages } from './index.js' */
-/* const handleCardClick = () => {
-  popupImagesImage.src = this._link;
-  popupImagesText.textContent = this._name;
-  popupImagesImage.alt = this._name;
-
-  openPopup(popupImages);
-} */
-
 export class Card {
   constructor(data, cardTemplateSelector, handleCardClick) {
     this._template = document.querySelector(cardTemplateSelector).content;
@@ -21,15 +11,9 @@ export class Card {
     this._likeButton.classList.toggle('elements__button_like_active');
   }
 
- /*  _handleDelete = () => {
-    this._newElement.remove();
-  } */
-
   _handleDelete(event) {
     event.target.closest('.elements__element').remove();
   }
-
-
 
   _setEventListeners() {
     const deleteButton = this._newElement.querySelector('.elements__deleteButton');
@@ -51,26 +35,4 @@ export class Card {
     this._setEventListeners()
     return this._newElement;
   }
-
 }
-
-
-/* const data = { name: '....', link: '.....'}
-const card = new Card(data, '#elementTemplate') */
-
-/* const popupImagesImage = document.querySelector('#popupImagesImage');
-const popupImagesText = document.querySelector('#popupImagesText');
-
-function  openPopup(popup) {
-  popup.classList.add('popup_opened');
-  document.addEventListener('keydown', closePopupEscape);
-}
-
-function closePopupEscape(evt) {
-  if (evt.key === 'Escape') {
-    const openPopup = document.querySelector('.popup_opened')
-    closePopup(openPopup);
-  }
-}
-
-*/
