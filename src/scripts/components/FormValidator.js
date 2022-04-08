@@ -66,7 +66,7 @@ export class FormValidator {
     this._inputList.forEach((inputElement) => {
       this._hideInputError(inputElement)
     });
-    this._toggleButtonState()
+    this._toggleButtonState()//Так, при вызове функции столкнулся с проблемой активной кнопки Сохранить в профиле. Прошу отклонить данную итерацию, завтра уже разберусь с этим. Сейчас иду спать
   }
 
   enableValidation() {
