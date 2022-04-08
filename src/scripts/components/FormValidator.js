@@ -62,6 +62,13 @@ export class FormValidator {
     });
   }
 
+  resetValidation() {
+    this._inputList.forEach((inputElement) => {
+      this._hideInputError(inputElement)
+    });
+    this._toggleButtonState
+  }
+
   enableValidation() {
     this._form.addEventListener('submit', (evt) => {
       evt.preventDefault();
@@ -70,11 +77,4 @@ export class FormValidator {
   }
 }
 
-export const validationConfig = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  buttonSelector: '.popup__button',
-  inputErrorClass: 'popup__input_type_error',
-  inputErrorClassSpan: 'popup__span_visibility',
-  disableButtonClass: 'popup__button_disabled'
-}
+

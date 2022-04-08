@@ -6,7 +6,7 @@ export class Card {
     this._handleCardClick = handleCardClick
   }
 
-  _imageHeartChanger = () => {
+  _toggleHeart = () => {
     this._likeButton.classList.toggle('elements__button_like_active');
   }
 
@@ -17,7 +17,7 @@ export class Card {
   _setEventListeners() {
     const deleteButton = this._newElement.querySelector('.elements__deleteButton');
     deleteButton.addEventListener("click", this._handleDelete);
-    this._likeButton.addEventListener('click', this._imageHeartChanger);
+    this._likeButton.addEventListener('click', this._toggleHeart);
     this._image.addEventListener('click', () => this._handleCardClick(this._name, this._link));
   }
 
