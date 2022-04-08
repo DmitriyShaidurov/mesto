@@ -4,8 +4,8 @@ import Section from './Section.js'
 import { PopupWithImage } from './PopupWithImage.js'
 import { PopupWithForm } from './PopupWithForm.js'
 import { UserInfo } from './UserInfo.js'
+import '../pages/index.css';
 
-//валидатор при закрытии поправить
 const popupAddForm = document.querySelector('#popupAddForm')
 const popupEditForm = document.querySelector('#popupEditForm')
 
@@ -97,16 +97,21 @@ export function closePopup(popup) {
 
 profileOpenPopupButton.addEventListener('click', () => {
   const item = userInfo.getUserInfo()
+
   nameInput.value = item.name;
   jobInput.value = item.job;
+  editProfileValidator._hideInputError(popupName)
+  editProfileValidator._hideInputError(aboutMe)
   editProfileValidator.disableButton()
   editProfilePopup.open()
 });
 
+const popupSpan = document.querySelector('#error-imageLink')
 
 profileImagesAddButton.addEventListener('click', () => {
+addCardValidator._hideInputError(imageLink)
+addCardValidator._hideInputError(imageNameId)
 addCardValidator.disableButton()
-
 addCardPopup.open()
 }
 );
