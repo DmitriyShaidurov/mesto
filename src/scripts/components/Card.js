@@ -18,7 +18,6 @@ export class Card {
   }
 
   _fillLike = () => {
-    /* console.log(this._likeButton) */
     this._likeButton.classList.add('elements__button_like_active');
   }
 
@@ -44,8 +43,6 @@ export class Card {
   setLikes(newLikes, like) {
 
     this._likes = newLikes
-    /* console.dir(this._likes) */
-    /* const like = this._newElement.querySelector('.elements__likes') */
     like.textContent = this._likes.length
 
 
