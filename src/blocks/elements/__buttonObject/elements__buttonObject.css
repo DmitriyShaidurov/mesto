@@ -1,0 +1,5 @@
+.elements__buttonObject {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}

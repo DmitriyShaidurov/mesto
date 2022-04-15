@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="pages/index.css"> -->
   <title>Место</title>
 </head>
 
@@ -17,16 +16,22 @@
 
   <main class="content">
     <section class="profile">
-      <img src="<%=require('./images/jak.jpg')%>" alt="Жак-Ив Кусто" class="profile__logo">
+      <button type="button" class="profile__Ava-btn">
+      <img src="#" alt="Жак-Ив Кусто" class="profile__logo"> <!-- <%=require('./images/jak.jpg')%> -->
+    </button>
       <div class="profile__intro">
         <div class="profile__content">
           <div class="profile__title-wrapper">
-            <h1 class="profile__title">Жак-Ив Кусто</h1>
+            <h1 class="profile__title">
+            </h1>
             <button class="profile__edit-button" id="profileEditButton" type="button">
-              <img src="<%=require('./images/profile-intro.svg')%>" class="profile__edit-button-image" alt="Редактировать">
+              <img src="<%=require('./images/profile-intro.svg')%>" class="profile__edit-button-image"
+                alt="Редактировать">
             </button>
           </div>
-          <p class="profile__text">Исследователь океана</p>
+          <p class="profile__text">
+            <!-- Исследователь океана -->
+          </p>
         </div>
         <button class="profile__add-button" type="button" id="profileImagesAddButton">
           <img class="profile__add-button-image" src="<%=require('./images/addbutton.svg')%>" alt="Добавить">
@@ -49,20 +54,20 @@
 
       <form class="popup__form" name="edit" novalidate id="popupEditForm">
         <h2 class="popup__text">Редактировать профиль</h2>
-        <input type="text" class="popup__input" id="popupName" name="name" placeholder="Имя" value="" required
-          minlength="2" maxlength="40">
+        <input type="text" class="popup__input" id="popupName" name="name" placeholder="Имя" value=""
+          minlength="2" maxlength="40" required>
         <span class="popup__span popup__span_type_top" id="error-popupName"></span>
-        <input type="text" class="popup__input" id="aboutMe" name="AboutMe" placeholder="О себе" value="" required
-          minlength="2" maxlength="200">
+        <input type="text" class="popup__input" id="aboutMe" name="AboutMe" placeholder="О себе" value=""
+          minlength="2" maxlength="200" required>
         <span class="popup__span popup__span_type_bottom" id="error-aboutMe"></span>
-        <input type="submit" disabled class="popup__button" value="Сохранить" name="submit" placeholder="Сохранить">
+        <input type="submit" class="popup__button" value="Сохранить" name="submit" placeholder="Сохранить" disabled>
       </form>
       <button class="popup__close-button" id="popupProfileCloseButton">
         <img class="popup__close-button-image" src="<%=require('./images/CloseIcon.svg')%>" alt="Закрыть">
       </button>
     </div>
-
   </div>
+
   <div class="popup" id="popupProfileImages">
     <div class="popup__container">
 
@@ -76,6 +81,41 @@
         <span class="popup__span popup__span_type_bottom" id="error-imageLink"></span>
         <input type="submit" disabled class="popup__button" value="Создать" id="popupAddButtonSubmit" name="submit"
           placeholder="Создать">
+
+      </form>
+      <button class="popup__close-button" id="popupProfileImagesCloseButton">
+        <img class="popup__close-button-image" src="<%=require('./images/CloseIcon.svg')%>" alt="Закрыть">
+      </button>
+    </div>
+  </div>
+
+  <div class="popup" id="popup_type_delete-confirm">
+    <div class="popup__container">
+
+
+      <h2 class="popup__text">Вы уверены?</h2>
+      <form class="popup__form" name="edit" id="popupAddForm" novalidate>
+        <button type="submit" class="popup__button" value="Да" id="popupDeleteButton" name="submit"
+          placeholder="Создать">Да</button>
+      </form>
+      <button class="popup__close-button" id="popupProfileImagesCloseButton">
+        <img class="popup__close-button-image" src="<%=require('./images/CloseIcon.svg')%>" alt="Закрыть">
+      </button>
+    </div>
+  </div>
+
+  <div class="popup" id="popupEditAvatar">
+    <div class="popup__container">
+
+
+      <h2 class="popup__text">Обновить аватар</h2>
+      <form class="popup__form" name="edit" id="popupEditAvatarForm" novalidate>
+        <input type="url" placeholder="Ссылка на аватар" class="popup__input popup__input_type_link" id="popupAvatarInputText"
+          name="link" value="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg" required>
+        <span class="popup__span popup__span_type_bottom" id="error-popupAvatarInputText"></span>
+
+        <input type="submit" disabled class="popup__button" value="Сохранить" id="popipEditAvatarButton" name="submit"
+          placeholder="Сохранить"></form>
       </form>
       <button class="popup__close-button" id="popupProfileImagesCloseButton">
         <img class="popup__close-button-image" src="<%=require('./images/CloseIcon.svg')%>" alt="Закрыть">
@@ -88,17 +128,24 @@
       <img src="#" alt="#" class="popup__image" id="popupImagesImage">
       <p class="popup__text-image" id="popupImagesText"></p>
       <button class="popup__button-image">
-        <img class="popup__close-button-image" src="<%=require('./images/CloseIcon.svg')%>" alt="Закрыть" id="popupCloseButtonImage">
+        <img class="popup__close-button-image" src="<%=require('./images/CloseIcon.svg')%>" alt="Закрыть"
+          id="popupCloseButtonImage">
       </button>
     </div>
   </div>
+
+
 
   <template id="elementTemplate">
     <div class="elements__element">
       <img src="#" class="elements__mask-group" alt="#">
       <h2 class="elements__place">Байкал</h2>
       <button class="elements__deleteButton" type="button"></button>
-      <button class="elements__button " type="button" id="popupAddImagesButton"></button>
+      <div class="elements__buttonObject">
+
+        <button class="elements__button " type="button" id="popupAddImagesButton"></button>
+        <span class="elements__likes"></span>
+      </div>
     </div>
   </template>
   <!-- <script type="module" src="./scripts/index.js"></script> -->

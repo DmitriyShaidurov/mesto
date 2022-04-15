@@ -1,6 +1,8 @@
 export const popupAddForm = document.querySelector('#popupAddForm')
 export const popupEditForm = document.querySelector('#popupEditForm')
+export const popupEditAvatarForm = document.querySelector('#popupEditAvatarForm')
 export const nameInput = document.querySelector('#popupName');
+export const nameAvatar = document.querySelector('.profile__logo');
 export const jobInput = document.querySelector('#aboutMe');
 export const initialCards = [
   {
@@ -31,6 +33,7 @@ export const initialCards = [
 export const elements = document.querySelector('.elements');
 export const profileOpenPopupButton = document.querySelector('#profileEditButton');
 export const profileImagesAddButton = document.querySelector('#profileImagesAddButton');
+export const profileOpenPopupAvatarButton = document.querySelector('.profile__Ava-btn')
 export const validationConfig = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',

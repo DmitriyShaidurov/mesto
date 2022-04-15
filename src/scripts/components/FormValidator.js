@@ -39,7 +39,10 @@ export class FormValidator {
 
   _hideInputError(input) {
     const errorElement = this._form.querySelector(`#error-${input.id}`);
+    /* console.dir(input) */
+
     input.classList.remove(this._settings.inputErrorClass);
+/* console.log(errorElement) */
     errorElement.classList.remove(this._settings.inputErrorClassSpan);
     errorElement.textContent = '';
   };
@@ -63,10 +66,12 @@ export class FormValidator {
   }
 
   resetValidation() {
+    console.dir(this._inputList)
     this._inputList.forEach((inputElement) => {
+
       this._hideInputError(inputElement)
     });
-    this._toggleButtonState()//Так, при вызове функции столкнулся с проблемой активной кнопки Сохранить в профиле. Прошу отклонить данную итерацию, завтра уже разберусь с этим. Сейчас иду спать
+    this._toggleButtonState()
   }
 
   enableValidation() {
