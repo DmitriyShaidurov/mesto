@@ -55,7 +55,7 @@ api.getCards()
     });
   })
 
-function loadFufload({ form, fetcher, loadingText }) {
+function loader({ form, fetcher, loadingText }) {
   const submitButton = form.querySelector('.popup__button')
   const initialText = submitButton.value
   submitButton.value = loadingText
@@ -69,7 +69,7 @@ function loadFufload({ form, fetcher, loadingText }) {
 function handleProfileFormSubmit(item) {
   const { AboutMe, name } = item
 
-  loadFufload({
+  loader({
     form: popupEditForm,
     fetcher: () =>
       api.editProfile(name, AboutMe)
@@ -86,7 +86,7 @@ function addCard(item) {
 
   /* loading(true, popupImages, 'Создание....') */
 
-  loadFufload({
+  loader({
     form: popupAddForm,
     fetcher: () =>
       api.addNewCard(item['title'], item.link)
@@ -111,7 +111,7 @@ function addCard(item) {
 
 const editProfileAvatarPopup = new PopupWithForm('#popupEditAvatar', () => {
   const avatarka = document.querySelector('#popupAvatarInputText')
-  loadFufload({
+  loader({
     form: popupEditAvatarForm,
     fetcher: () =>
       api.editAvatar(avatarka.value)
