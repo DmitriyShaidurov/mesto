@@ -4,11 +4,6 @@
   height: 120px;
 }
 
-/* .profile__logo:hover {
-  cursor: pointer;
-  opacity: .6;
-} */
-
 @media screen and (max-width: 879px) {
   .profile__logo {
     margin: 0 auto 26px;
