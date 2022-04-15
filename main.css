@@ -9,14 +9,14 @@
 .profile__text{color:#fff;font-family:Inter,Arial,sans-serif;font-size:18px;font-style:normal;font-weight:400;line-height:22px;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%}@media screen and (max-width:879px){.profile__text{text-align:center}}@media screen and (max-width:400px){.profile__text{font-size:14px;line-height:17px;margin:0 auto;width:282px}}
 .profile__intro{align-content:flex-start;align-items:center;display:flex;flex-wrap:nowrap;justify-content:space-between;margin:0;width:100%}@media screen and (max-width:879px){.profile__intro{flex-direction:column}}@media screen and (max-width:400px){.profile__intro{margin:0 auto;width:282px}}
 .profile__edit-button{background-color:#000;cursor:pointer;height:24px;margin:0;padding:0;transition:.2s linear;width:24px}.profile__edit-button:hover{opacity:.6}@media screen and (max-width:400px){.profile__edit-button{height:18px;width:18px}}
-.profile__logo{border-radius:50%;height:120px;margin:0 30px 0 0;width:120px}@media screen and (max-width:879px){.profile__logo{margin:0 auto 26px}}
+.profile__logo{border-radius:50%;height:120px;width:120px}@media screen and (max-width:879px){.profile__logo{margin:0 auto 26px}}
 .profile__edit-button-image{height:10px;width:10px}@media screen and (max-width:400px){.profile__edit-button-image{height:8px;margin:0 0 4px;width:8px}}
 .profile__add-button{background-color:#000;border:2px solid #fff;border-radius:2px;box-sizing:border-box;cursor:pointer;height:50px;margin:0;padding:0;transition:.2s linear;width:150px}.profile__add-button:hover{opacity:.6}@media screen and (max-width:879px){.profile__add-button{margin-top:36px;width:282px}}
 .elements{display:grid;gap:20px 17px;grid-template-columns:repeat(auto-fit,minmax(-webkit-min-content,282px));grid-template-columns:repeat(auto-fit,minmax(min-content,282px));margin:51px auto;max-width:880px;padding:0 200px}@media screen and (max-width:1279px){.elements{padding:0 80px}}@media screen and (max-width:1040px){.elements{max-width:596px;padding:0 40px}}@media screen and (max-width:680px){.elements{display:flex;flex-direction:column;flex-wrap:wrap}}@media screen and (max-width:400px){.elements{-moz-column-gap:0;column-gap:0;margin:0 auto 48px;max-width:282px;padding:0}}
 .elements__element{align-content:flex-start;background-color:#fff;border-radius:10px;display:flex;flex-wrap:wrap;justify-content:center;margin:0 auto;overflow:hidden;position:relative;width:282px}@media screen and (max-width:700px){.elements__element{margin:0 auto}}
 .elements__mask-group{box-sizing:border-box;cursor:pointer;height:282px;margin:0 0 25px;width:282px}
 .elements__place{color:#000;font-family:Inter,Arial,sans-serif;font-size:24px;font-style:normal;font-weight:900;line-height:29px;margin:0 0 25px 21px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:200px}
-.elements__button{background-color:#fff;background-image:url(cbed5331d270056562b2.svg);background-repeat:no-repeat;border:0;cursor:pointer;height:19px;margin:6px 20px 30px 19px;padding:0;transition:.2s linear;width:22px}.elements__button:hover{opacity:.5}.elements__button:active{background-image:url(35948469632d0421d697.svg)}
+.elements__button{background-color:#fff;background-image:url(cbed5331d270056562b2.svg);background-repeat:no-repeat;border:0;cursor:pointer;height:19px;margin:6px 20px 0 19px;padding:0;transition:.2s linear;width:22px}.elements__button:hover{opacity:.5}.elements__button:active{background-image:url(35948469632d0421d697.svg)}
 .elements__button-image{height:100%;margin:0;width:100%}
 .footer{margin:66px auto 60px;max-width:880px;padding:0 200px}@media screen and (max-width:1279px){.footer{padding:0 80px}}@media screen and (max-width:879px){.footer{padding:0 40px}}@media screen and (max-width:400px){.footer{margin:0 19px 36px;padding:0 19px}}
 .footer__author{color:#545454;font-family:Inter,Arial,sans-serif;font-size:18px;font-style:normal;font-weight:400;line-height:22px;margin:0;text-align:left}@media screen and (max-width:321px){.footer__author{font-size:14px;line-height:17px}}
@@ -45,4 +45,7 @@
 .popup__span_type_bottom{margin:5px 0 31px}@media screen and (max-width:600px){.popup__span_type_bottom{margin-bottom:28px}}
 .popup__input_type_error{border-bottom-color:red}
 .popup__button_disabled{background-color:#fff;color:#000;cursor:default;opacity:.2}.popup__button_disabled:hover{opacity:.2}
+.elements__buttonObject{display:flex;flex-direction:column;margin:0}
+.elements__likes{font-family:Inter;font-size:13px;font-style:normal;font-weight:400;line-height:16px;margin:3px auto 22px;text-align:center}
+.profile__Ava-btn{background-color:transparent;background-repeat:no-repeat;border:none;border-radius:50%;cursor:pointer;height:120px;margin:0 30px 0 0;padding:0;transition:all .6s ease;width:120px}.profile__Ava-btn:hover{opacity:.6;z-index:1}
 
