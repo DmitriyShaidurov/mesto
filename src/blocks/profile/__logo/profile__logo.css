@@ -2,6 +2,15 @@
   border-radius: 50%;
   width: 120px;
   height: 120px;
+  opacity: 1;
+  margin: 0;
+  transition: linear .3s;
+  position: relative;
+}
+
+.profile__logo:hover {
+  z-index: 0;
+  opacity: 0.4;
 }
 
 @media screen and (max-width: 879px) {
@@ -9,6 +18,7 @@
     margin: 0 auto 26px;
   }
 }
+
 
 
 

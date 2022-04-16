@@ -112,12 +112,11 @@ function addCard(item) {
 
 }
 
-const editProfileAvatarPopup = new PopupWithForm('#popupEditAvatar', () => {
-  const avatarka = document.querySelector('#popupAvatarInputText')
+const editProfileAvatarPopup = new PopupWithForm('#popupEditAvatar', (item) => {
   loader({
     form: popupEditAvatarForm,
     fetcher: () =>
-      api.editAvatar(avatarka.value)
+      api.editAvatar(item.link)
         .then(({ avatar }) => {
           userInfo.setUserInfo({ avatar })
           editProfileAvatarPopup.close()
@@ -226,17 +225,13 @@ addCardPopup.setEventListeners()
 editProfilePopup.setEventListeners()
 confirmPopup.setEventListeners()
 
-section.renderItems()
-
 const userInfo = new UserInfo({ profileNameSelector: '.profile__title', profileJobSelector: '.profile__text', profileAvatarSelector: '.profile__logo' })
 
 
 Promise.all([api.getProfile(), api.getCards()])
   .then(([res, cards]) => {
     userInfo.setUserInfo({ title: res.name, job: res.about, avatar: res.avatar })
-    console.log(res)
     userId = res._id
-    console.log(userId)
     cards.forEach(data => {
       const card = createCard(
         {
