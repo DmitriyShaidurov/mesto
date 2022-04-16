@@ -38,7 +38,7 @@ let userId;
 
 
 
-api.getCards()
+/* api.getCards()
   .then(cardList => {
     cardList.forEach(data => {
       const card = createCard(
@@ -54,7 +54,7 @@ api.getCards()
       section.addItem(card)
     });
   })
-  .catch(err => console.log(err))
+  .catch(err => console.log(err)) */
 
 function loader({ form, fetcher, loadingText }) {
   const submitButton = form.querySelector('.popup__button')
@@ -167,12 +167,12 @@ function createCard(item) {
 
 
 
-api.getProfile()
+/* api.getProfile()
   .then(res => {
     userInfo.setUserInfo({ title: res.name, job: res.about, avatar: res.avatar })
     userId = res._id
   })
-  .catch(err => console.log(err))
+  .catch(err => console.log(err)) */
 
 
 
@@ -232,8 +232,23 @@ const userInfo = new UserInfo({ profileNameSelector: '.profile__title', profileJ
 
 
 Promise.all([api.getProfile(), api.getCards()])
-  .then(({ title, job, avatar }) => {
-    userInfo.setUserInfo({ title, job, avatar })
-    createCard(item)
+  .then(([res, cards]) => {
+    userInfo.setUserInfo(res)
+    console.log(res)
+    userId = res._id
+    console.log(userId)
+    cards.forEach(data => {
+      const card = createCard(
+        {
+          name: data.name,
+          link: data.link,
+          likes: data.likes,
+          id: data._id,
+          userId: userId,
+          ownerId: data.owner._id
+        }
+      )
+      section.addItem(card)
+    });
   })
   .catch(err => console.log(err))

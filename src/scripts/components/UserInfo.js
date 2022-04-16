@@ -13,7 +13,7 @@ export class UserInfo {
     }
   }
 
-  setUserInfo({ title, job, avatar }) {
+  setUserInfo({ title, job, avatar}) {
     if (title !== undefined) this._nameElement.textContent = title
     if (job !== undefined) this._jobElement.textContent = job
     if (avatar !== undefined) this._avatarElement.src = avatar
