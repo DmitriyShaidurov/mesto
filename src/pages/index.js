@@ -54,6 +54,7 @@ api.getCards()
       section.addItem(card)
     });
   })
+  .catch(err => console.log(err))
 
 function loader({ form, fetcher, loadingText }) {
   const submitButton = form.querySelector('.popup__button')
@@ -77,6 +78,7 @@ function handleProfileFormSubmit(item) {
           userInfo.setUserInfo({ title: name, job: AboutMe })
           editProfilePopup.close()
         })
+        .catch(err => console.log(err))
     ,
     loadingText: 'Сохранение...'
   })
@@ -103,6 +105,7 @@ function addCard(item) {
           section.addItem(card)
           addCardPopup.close()
         })
+        .catch(err => console.log(err))
     ,
     loadingText: 'Создание...'
   })
@@ -119,6 +122,7 @@ const editProfileAvatarPopup = new PopupWithForm('#popupEditAvatar', () => {
           userInfo.setUserInfo({ avatar })
           editProfileAvatarPopup.close()
         })
+        .catch(err => console.log(err))
     ,
     loadingText: 'Сохранение...'
   })
@@ -137,6 +141,7 @@ function createCard(item) {
             card.deleteCard(cards)
             confirmPopup.close()
           })
+          .catch(err => console.log(err))
       })
     },
     (id, like) => {
@@ -145,6 +150,7 @@ function createCard(item) {
           .then(res => {
             card.setLikes(res.likes, like)
           })
+          .catch(err => console.log(err))
       }
       else {
         api.addLike(id, like)
@@ -152,6 +158,7 @@ function createCard(item) {
 
             card.setLikes(res.likes, like)
           })
+          .catch(err => console.log(err))
       }
     }
   )
@@ -165,6 +172,7 @@ api.getProfile()
     userInfo.setUserInfo({ title: res.name, job: res.about, avatar: res.avatar })
     userId = res._id
   })
+  .catch(err => console.log(err))
 
 
 
@@ -223,5 +231,9 @@ section.renderItems()
 const userInfo = new UserInfo({ profileNameSelector: '.profile__title', profileJobSelector: '.profile__text', profileAvatarSelector: '.profile__logo' })
 
 
-
-
+Promise.all([api.getProfile(), api.getCards()])
+  .then(({ title, job, avatar }) => {
+    userInfo.setUserInfo({ title, job, avatar })
+    createCard(item)
+  })
+  .catch(err => console.log(err))
