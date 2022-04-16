@@ -167,12 +167,12 @@ function createCard(item) {
 
 
 
-api.getProfile()
+/* api.getProfile()
   .then(res => {
     userInfo.setUserInfo({ title: res.name, job: res.about, avatar: res.avatar })
     userId = res._id
   })
-  .catch(err => console.log(err))
+  .catch(err => console.log(err)) */
 
 
 
@@ -233,9 +233,9 @@ const userInfo = new UserInfo({ profileNameSelector: '.profile__title', profileJ
 
 Promise.all([api.getProfile(), api.getCards()])
   .then(([res, cards]) => {
-    /* userInfo.setUserInfo(res)
+    userInfo.setUserInfo({ title: res.name, job: res.about, avatar: res.avatar })
     console.log(res)
-    userId = res._id */
+    userId = res._id
     console.log(userId)
     cards.forEach(data => {
       const card = createCard(
